@@ -1,15 +1,15 @@
 #!/bin/bash
 clear
 red='\e[1;31m'
-green='\e[1;32m'
+green2='\e[1;32m'
 yell='\e[1;33m'
 NC='\e[0m'
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 
-echo "           ${green}Tools install...!${NC}"
-echo "                  ${green}Progress...${NC}"
+echo "           ${green}Tools install...!"
+echo "                  ${green}Progress..."
 sleep 0.5
 
 sudo apt update -y

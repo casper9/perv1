@@ -396,13 +396,13 @@ chmod +x xp
 chmod +x slhost
 cd
 
-if [ ! -f "/etc/cron.d/re_otm" ]; then
-cat> /etc/cron.d/re_otm << END
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 2 * * * root /sbin/reboot
-END
-fi
+#if [ ! -f "/etc/cron.d/re_otm" ]; then
+#cat> /etc/cron.d/re_otm << END
+#SHELL=/bin/sh
+#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+#0 2 * * * root /sbin/reboot
+#END
+#fi
 
 if [ ! -f "/etc/cron.d/xp_otm" ]; then
 cat> /etc/cron.d/xp_otm << END

@@ -13,6 +13,7 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
 sed -i "s/### $user $exp $pass//g" /etc/xray/ssh
+rm /home/vps/public_html/ssh-$user.txt
 
 fi
 done
@@ -30,6 +31,7 @@ if [[ "$exp2" -le "0" ]]; then
 sed -i "/^#vmg $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vmg $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f /etc/xray/$user-tls.json /etc/xray/$user-none.json
+rm /home/vps/public_html/vmess-$user.txt
 fi
 done
 
@@ -61,6 +63,7 @@ exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
 sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
+rm /home/vps/public_html/vless-$user.txt
 fi
 done
 
@@ -91,6 +94,7 @@ exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
 sed -i "/^#trg $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#trg $user $exp/,/^},{/d" /etc/xray/config.json
+rm /home/vps/public_html/trojan-$user.txt
 fi
 done
 systemctl restart xray

@@ -13,8 +13,8 @@ pip3 install pillow
 echo ""
 read -e -p "[*] Input your Bot Token : " bottoken
 read -e -p "[*] Input Your Id Telegram :" admin
-echo -e BOT_TOKEN='"'$bottoken'"' >> /root/geo/var.txt
-echo -e ADMIN='"'$admin'"' >> /root/geo/var.txt
+echo -e BOT_TOKEN='"'$bottoken'"' >> /root/casper/var.txt
+echo -e ADMIN='"'$admin'"' >> /root/casper/var.txt
 clear
 echo "Done"
 echo "Your Data Bot"
@@ -25,23 +25,23 @@ echo -e "==============================="
 echo "Setting done"
 
 
-cat > /etc/systemd/system/casperbot.service << END
+cat > /etc/systemd/system/casper.service << END
 [Unit]
 Description=Simple casper - @casper
 After=network.target
 
 [Service]
 WorkingDirectory=/root
-ExecStart=/usr/bin/python3 -m casperbot
+ExecStart=/usr/bin/python3 -m /root/casper
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
 END
 
-systemctl start casperbot
-systemctl enable casperbot
-systemctl restart casperbot
+systemctl start casper
+systemctl enable casper
+systemctl restart casper
 
 clear
 

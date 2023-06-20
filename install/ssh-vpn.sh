@@ -292,6 +292,15 @@ wget https://raw.githubusercontent.com/casper9/perv1/main/install/vpn.sh &&  chm
 # // install lolcat
 wget https://raw.githubusercontent.com/casper9/perv1/main/install/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
 
+# memory swap 1gb
+cd
+dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+mkswap /swapfile
+chown root:root /swapfile
+chmod 0600 /swapfile >/dev/null 2>&1
+swapon /swapfile >/dev/null 2>&1
+sed -i '$ i\/swapfile      swap swap   defaults    0 0' /etc/fstab
+
 # install fail2ban
 apt -y install fail2ban
 
@@ -360,19 +369,13 @@ wget -O m-vmess "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-vme
 wget -O m-vless "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-vless.sh"
 wget -O m-ssws "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-ssws.sh"
 wget -O m-trojan "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-trojan.sh"
-
-# menu ssh ovpn
 wget -O m-sshovpn "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-sshovpn.sh"
 wget -O tendang "https://raw.githubusercontent.com/casper9/perv1/main/install/tendang.sh"
-wget -O insshws "https://raw.githubusercontent.com/casper9/perv1/main/sshws/insshws.sh"
 wget -O issue "https://raw.githubusercontent.com/casper9/perv1/main/install/issue.net"
-# menu system
 wget -O m-system "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-system.sh"
 wget -O m-update "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-update.sh"
 wget -O m-theme "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-theme.sh"
 wget -O speedtest "https://raw.githubusercontent.com/casper9/perv1/main/install/speedtest_cli.py"
-wget -O swapkvm "https://raw.githubusercontent.com/casper9/perv1/main/install/swapkvm.sh"
-wget -O slhost "https://raw.githubusercontent.com/casper9/perv1/main/install/slhost.sh""
 
 
 wget -O xp "https://raw.githubusercontent.com/casper9/perv1/main/install/xp.sh"
@@ -382,18 +385,13 @@ chmod +x m-vmess
 chmod +x m-vless
 chmod +x m-ssws
 chmod +x m-trojan
-
 chmod +x m-sshovpn
 chmod +x tendang
-chmod +x insshws
 chmod +x issue
-
 chmod +x m-system
 chmod +x m-update
 chmod +x speedtest
-chmod +x swapkvm
 chmod +x xp
-chmod +x slhost
 cd
 
 #if [ ! -f "/etc/cron.d/re_otm" ]; then

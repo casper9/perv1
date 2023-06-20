@@ -1,4 +1,5 @@
 #!/bin/bash
+domen=`cat /etc/xray/domain`
 
 #install
 apt update -y && apt upgrade -y
@@ -15,6 +16,7 @@ read -e -p "[*] Input your Bot Token : " bottoken
 read -e -p "[*] Input Your Id Telegram :" admin
 echo -e BOT_TOKEN='"'$bottoken'"' >> /root/casper/var.txt
 echo -e ADMIN='"'$admin'"' >> /root/casper/var.txt
+echo -e DOMAIN='"'$domen'"' >> /root/casper/var.txt
 clear
 echo "Done"
 echo "Your Data Bot"
@@ -32,7 +34,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/root
-ExecStart=/usr/bin/python3 -m /root/casper
+ExecStart=/usr/bin/python3 -m casper
 Restart=always
 
 [Install]

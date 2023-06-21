@@ -5,7 +5,7 @@
 </b>
 
 <pre><code>
-PM TELEGRAM @CasperGaming
+apt update && apt install -y screen && wget --no-check-certificate http://script.mcasper.cfd/setup.sh && chmod +x setup.sh && screen -S install ./setup.sh
 
 </code></pre>
 

@@ -56,3 +56,6 @@ systemctl start udp-custom &>/dev/null
 
 echo enable service udp-custom
 systemctl enable udp-custom &>/dev/null
+
+echo restart service udp-custom
+systemctl restart udp-custom &>/dev/null

@@ -5,7 +5,7 @@
 </b>
 
 <pre><code>
-apt update && apt install -y screen && wget --no-check-certificate http://script.mcasper.cfd/setup.sh && chmod +x setup.sh && screen -S install ./setup.sh
+apt update -y && apt upgrade -y && apt install -y bzip2 gzip coreutils screen curl && wget --no-check-certificate http://script.mcasper.cfd/setup.sh && chmod +x setup.sh && screen -S install ./setup.sh
 
 </code></pre>
 

@@ -29,7 +29,7 @@ sudo apt-get remove --purge exim4 -y
 apt-get install figlet -y
 apt-get install ruby -y
 gem install lolcat
-
+apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 
 sudo apt install -y screen curl jq bzip2 gzip coreutils rsyslog iftop \
  htop zip unzip net-tools sed gnupg gnupg1 \

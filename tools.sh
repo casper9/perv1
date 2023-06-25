@@ -30,6 +30,16 @@ apt-get install figlet -y
 apt-get install ruby -y
 gem install lolcat
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
+apt -y install squid
+apt -y install sslh
+
+apt autoclean -y >/dev/null 2>&1
+apt -y remove --purge unscd >/dev/null 2>&1
+apt-get -y --purge remove samba* >/dev/null 2>&1
+apt-get -y --purge remove apache2* >/dev/null 2>&1
+apt-get -y --purge remove bind9* >/dev/null 2>&1
+apt-get -y remove sendmail* >/dev/null 2>&1
+apt autoremove -y >/dev/null 2>&1
 
 sudo apt install -y screen curl jq bzip2 gzip coreutils rsyslog iftop \
  htop zip unzip net-tools sed gnupg gnupg1 \

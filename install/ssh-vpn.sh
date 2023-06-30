@@ -395,11 +395,11 @@ chmod +x xp
 cd
 
 #if [ ! -f "/etc/cron.d/re_otm" ]; then
-cat> /etc/cron.d/re_otm << END
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 6 * * * root /sbin/reboot
-END
+#cat> /etc/cron.d/re_otm << END
+#SHELL=/bin/sh
+#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+#0 6 * * * root /sbin/reboot
+#END
 #fi
 
 #if [ ! -f "/etc/cron.d/xp_otm" ]; then

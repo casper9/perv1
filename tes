@@ -1,3 +1,0 @@
-waktu=$(date +"%T")
-tes=(30 + $waktu)
-echo "$waktu $tes" > trial

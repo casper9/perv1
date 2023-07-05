@@ -24,10 +24,16 @@ now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
 exp=$(grep -w "^#vmg $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+uuid=$(grep -w "^#vmg $user" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
+if [ ! -e /etc/vmess/akundelete ]; then
+echo "" > /etc/vmess/akundelete
+fi
+clear
+echo "### $user $exp $uuid >> /etc/vmess/akundelete
 sed -i "/^#vmg $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vmg $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f /etc/xray/$user-tls.json /etc/xray/$user-none.json
@@ -57,10 +63,16 @@ now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
 exp=$(grep -w "^#vlg $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+uuid=$(grep -w "^#vl $user" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
+if [ ! -e /etc/vless/akundelete ]; then
+echo "" > /etc/vless/akundelete
+fi
+clear
+echo "### $user $exp $uuid >> /etc/vless/akundelete
 sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
 rm /home/vps/public_html/vless-$user.txt
@@ -105,10 +117,16 @@ now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
 exp=$(grep -w "^#tr $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+uuid=$(grep -w "^#tr $user" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
+if [ ! -e /etc/trojan/akundelete ]; then
+echo "" > /etc/trojan/akundelete
+fi
+clear
+echo "### $user $exp $uuid >> /etc/trojan/akundelete
 sed -i "/^#tr $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#tr $user $exp/,/^},{/d" /etc/xray/config.json
 fi

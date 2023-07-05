@@ -33,7 +33,7 @@ if [ ! -e /etc/vmess/akundelete ]; then
 echo "" > /etc/vmess/akundelete
 fi
 clear
-echo "### $user $exp $uuid >> /etc/vmess/akundelete
+echo "### $user $exp $uuid" >> /etc/vmess/akundelete
 sed -i "/^#vmg $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vmg $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f /etc/xray/$user-tls.json /etc/xray/$user-none.json
@@ -72,7 +72,7 @@ if [ ! -e /etc/vless/akundelete ]; then
 echo "" > /etc/vless/akundelete
 fi
 clear
-echo "### $user $exp $uuid >> /etc/vless/akundelete
+echo "### $user $exp $uuid" >> /etc/vless/akundelete
 sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
 rm /home/vps/public_html/vless-$user.txt
@@ -126,7 +126,7 @@ if [ ! -e /etc/trojan/akundelete ]; then
 echo "" > /etc/trojan/akundelete
 fi
 clear
-echo "### $user $exp $uuid >> /etc/trojan/akundelete
+echo "### $user $exp $uuid" >> /etc/trojan/akundelete
 sed -i "/^#tr $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#tr $user $exp/,/^},{/d" /etc/xray/config.json
 fi

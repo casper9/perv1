@@ -6,19 +6,23 @@ data=( `cat /etc/xray/ssh | grep '^###' | cut -d ' ' -f 2 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-passs=$(grep -w "^### $user" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
+pass=$(grep -w "^### $user" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
 exp=$(grep -w "^### $user" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
-sed -i "s/### $user $exp $pass//g" /etc/xray/ssh
-rm /home/vps/public_html/ssh-$user.txt
-
+sed -i "/^### $user $exp $Pass/d" /etc/xray/ssh
+if getent passwd $user > /dev/null 2>&1; then
+        userdel $user > /dev/null 2>&1
+fi
+rm /home/vps/public_html/ssh-$user.txt >/dev/null 2>&1
+rm /etc/xray/sshx/${user}IP >/dev/null 2>&1
+rm /etc/xray/sshx/${user}login >/dev/null 2>&1
 fi
 done
 
-##----- Auto Remove Vmess GRPC
+##----- Auto Remove Vmess
 data=( `cat /etc/xray/config.json | grep '^#vmg' | cut -d ' ' -f 2 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -35,34 +39,20 @@ fi
 clear
 echo "### $user $exp $uuid" >> /etc/vmess/akundelete
 sed -i "/^#vmg $user $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#vmg $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#vm $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f /etc/xray/$user-tls.json /etc/xray/$user-none.json
-rm /home/vps/public_html/vmess-$user.txt
+rm /home/vps/public_html/vmess-$user.txt >/dev/null 2>&1
+rm /etc/vmess/${user}IP >/dev/null 2>&1
+rm /etc/vmess/${user}login >/dev/null 2>&1
 fi
 done
 
-##----- Auto Remove Vmess
-data=( `cat /etc/xray/config.json | grep '^#vm' | cut -d ' ' -f 2 | sort | uniq`);
+#----- Auto Remove Vless
+data=( `cat /etc/xray/config.json | grep '^#vl' | cut -d ' ' -f 2 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#vm $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-d1=$(date -d "$exp" +%s)
-d2=$(date -d "$now" +%s)
-exp2=$(( (d1 - d2) / 86400 ))
-if [[ "$exp2" -le "0" ]]; then
-sed -i "/^#vm $user $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#vm $user $exp/,/^},{/d" /etc/xray/config.json
-rm -f /etc/xray/$user-tls.json /etc/xray/$user-none.json
-fi
-done
-
-#----- Auto Remove Vless GRPC
-data=( `cat /etc/xray/config.json | grep '^#vlg' | cut -d ' ' -f 2 | sort | uniq`);
-now=`date +"%Y-%m-%d"`
-for user in "${data[@]}"
-do
-exp=$(grep -w "^#vlg $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+exp=$(grep -w "^#vl $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 uuid=$(grep -w "^#vl $user" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
@@ -74,42 +64,12 @@ fi
 clear
 echo "### $user $exp $uuid" >> /etc/vless/akundelete
 sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
-rm /home/vps/public_html/vless-$user.txt
-fi
-done
-
-#----- Auto Remove Vless
-data=( `cat /etc/xray/config.json | grep '^#vl' | cut -d ' ' -f 2 | sort | uniq`);
-now=`date +"%Y-%m-%d"`
-for user in "${data[@]}"
-do
-exp=$(grep -w "^#vl $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-d1=$(date -d "$exp" +%s)
-d2=$(date -d "$now" +%s)
-exp2=$(( (d1 - d2) / 86400 ))
-if [[ "$exp2" -le "0" ]]; then
 sed -i "/^#vl $user $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#vl $user $exp/,/^},{/d" /etc/xray/config.json
+rm /home/vps/public_html/vless-$user.txt >/dev/null 2>&1
+rm /etc/vless/${user}IP >/dev/null 2>&1
+rm /etc/vless/${user}login >/dev/null 2>&1
 fi
 done
-
-#----- Auto Remove Trojan GRPC
-data=( `cat /etc/xray/config.json | grep '^#trg' | cut -d ' ' -f 2 | sort | uniq`);
-now=`date +"%Y-%m-%d"`
-for user in "${data[@]}"
-do
-exp=$(grep -w "^#trg $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-d1=$(date -d "$exp" +%s)
-d2=$(date -d "$now" +%s)
-exp2=$(( (d1 - d2) / 86400 ))
-if [[ "$exp2" -le "0" ]]; then
-sed -i "/^#trg $user $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#trg $user $exp/,/^},{/d" /etc/xray/config.json
-rm /home/vps/public_html/trojan-$user.txt
-fi
-done
-systemctl restart xray
 
 #----- Auto Remove Trojan
 data=( `cat /etc/xray/config.json | grep '^#tr' | cut -d ' ' -f 2 | sort | uniq`);
@@ -128,7 +88,10 @@ fi
 clear
 echo "### $user $exp $uuid" >> /etc/trojan/akundelete
 sed -i "/^#tr $user $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#tr $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#trg $user $exp/,/^},{/d" /etc/xray/config.json
+rm /home/vps/public_html/trojan-$user.txt >/dev/null 2>&1
+rm /etc/trojan/${user}IP >/dev/null 2>&1
+rm /etc/trojan/${user}login >/dev/null 2>&1
 fi
 done
 systemctl restart xray

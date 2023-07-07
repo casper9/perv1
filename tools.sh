@@ -31,7 +31,6 @@ apt-get install ruby -y
 gem install lolcat
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 apt -y install squid
-apt -y install sslh
 apt -y install nmap
 
 apt autoclean -y >/dev/null 2>&1

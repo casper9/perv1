@@ -333,33 +333,13 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-# menu
-wget -O menu "https://raw.githubusercontent.com/casper9/perv1/main/menu/menu.sh"
-wget -O m-vmess "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-vmess.sh"
-wget -O m-vless "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-vless.sh"
-wget -O m-ssws "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-ssws.sh"
-wget -O m-trojan "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-trojan.sh"
-wget -O m-sshovpn "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-sshovpn.sh"
-wget -O tendang "https://raw.githubusercontent.com/casper9/perv1/main/install/tendang.sh"
 wget -O issue "https://raw.githubusercontent.com/casper9/perv1/main/install/issue.net"
-wget -O m-system "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-system.sh"
-wget -O m-update "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-update.sh"
 wget -O m-theme "https://raw.githubusercontent.com/casper9/perv1/main/menu/m-theme.sh"
 wget -O speedtest "https://raw.githubusercontent.com/casper9/perv1/main/install/speedtest_cli.py"
-
-
 wget -O xp "https://raw.githubusercontent.com/casper9/perv1/main/install/xp.sh"
 
-chmod +x menu
-chmod +x m-vmess
-chmod +x m-vless
-chmod +x m-ssws
-chmod +x m-trojan
-chmod +x m-sshovpn
-chmod +x tendang
 chmod +x issue
-chmod +x m-system
-chmod +x m-update
+chmod +x m-theme
 chmod +x speedtest
 chmod +x xp
 cd
@@ -379,10 +359,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 0 0 * * * root /usr/bin/xp
 END
 #fi
-
-cat > /home/re_otm <<-END
-7
-END
 
 #if [ ! -f "/etc/cron.d/bckp_otm" ]; then
 cat> /etc/cron.d/bckp_otm << END
@@ -417,34 +393,6 @@ apt autoremove -y >/dev/null 2>&1
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
-sleep 1
-echo -e "$yell[SERVICE]$NC Restart All service SSH & OVPN"
-/etc/init.d/nginx restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting nginx"
-/etc/init.d/openvpn restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting cron "
-/etc/init.d/ssh restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting ssh "
-/etc/init.d/dropbear restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting dropbear "
-/etc/init.d/fail2ban restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting fail2ban "
-/etc/init.d/sslh restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting sslh "
-/etc/init.d/stunnel4 restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting stunnel4 "
-/etc/init.d/vnstat restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting vnstat "
-/etc/init.d/squid restart >/dev/null 2>&1
-
 
 rm -f /root/key.pem
 rm -f /root/cert.pem
@@ -452,5 +400,4 @@ rm -f /root/ssh-vpn.sh
 rm -f /root/bbr.sh
 rm -rf /etc/apache2/ports.conf
 
-# finihsing
 clear

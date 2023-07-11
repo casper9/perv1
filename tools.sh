@@ -30,7 +30,6 @@ gem install lolcat
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 apt -y install squid
 apt -y install nmap
-apt -y install sslh
 
 apt autoclean -y >/dev/null 2>&1
 apt -y remove --purge unscd >/dev/null 2>&1

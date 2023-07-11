@@ -5,7 +5,7 @@
 </b>
 
 <pre><code>
-apt update -y && apt upgrade -y && apt install -y bzip2 gzip coreutils screen curl && wget --no-check-certificate http://script.mcasper.cfd/setup.sh && chmod +x setup.sh && screen -S install ./setup.sh
+apt install -y bzip2 gzip wget init coreutils git screen curl && wget --no-check-certificate http://script.mcasper.cfd/setup.sh && chmod +x setup.sh && screen -S install ./setup.sh 
 
 </code></pre>
 
@@ -22,55 +22,40 @@ apt update -y && apt upgrade -y && apt install -y bzip2 gzip coreutils screen cu
 
 </code></pre>
 
-<pre><code>wget https://raw.githubusercontent.com/casper9/perv1/main/vpsroot.sh && chmod +x vpsroot.sh && ./vpsroot.sh
+<pre><code>
+apt install -y wget && wget --no-check-certificate http://script.mcasper.cfd/root && chmod +x root && ./root
 
 </code></pre>
-
-
-
-
-<h2 align="left">
-<hr>
-  
-☣️ ᴊᴜᴀʟ sᴇᴡᴀ sᴄʀɪᴘᴛ ᴠᴘs ᴘʀᴇᴍɪᴜᴍ
-
-  🔱 sᴜᴘᴘᴏʀᴛ ɴᴏᴛɪғ ᴍᴜʟᴛɪ ʟᴏɢɪɴ ssʜ
-
-  🔱 sᴜᴘᴘᴏʀᴛ ɴᴏᴛɪғ ᴍᴜʟᴛɪ ʟᴏɢɪɴ ᴠᴍᴇss
-
-🔱 sᴜᴘᴘᴏʀᴛ ɴᴏᴛɪғ ᴍᴜʟᴛɪ ʟᴏɢɪɴ ᴠʟᴇss
-
-  🔱 sᴜᴘᴘᴏʀᴛ ɴᴏᴛɪғ ᴍᴜʟᴛɪ ʟᴏɢɪɴ ᴛʀᴏᴊᴀɴ
-
-  🔱 sᴜᴘᴘᴏʀᴛ ᴍᴜʟᴛɪᴘᴀᴛᴄʜ ʙᴜᴀᴛ ᴏᴘᴏᴋ
-
-  🔱 ᴀᴜᴛᴏ ʙᴀᴄᴋᴜᴘ ᴛᴇʟᴇɢʀᴀᴍ
-
-  🔱 ᴀᴜᴛᴏ sᴀᴠᴇ ᴀᴋᴜɴ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ
-
-  🔱 ʟɪᴍɪᴛ ɪᴘ ᴘᴇʀʟᴏɢɪɴ
-
-☣️ ᴘᴇʀʙᴜʟᴀɴ
-
-  ~ ʜᴀʀɢᴀ 1 ɪᴘ 5ᴋ 1ʙᴜʟᴀɴ
-
-  ~ ʜᴀʀɢᴀ 3 ɪᴘ 10ᴋ 1ʙᴜʟᴀɴ
-
-  ~ ʜᴀʀɢᴀ 6 ɪᴘ 15ᴋ 1ʙᴜʟᴀɴ
-
-☣️ ʟɪғᴇᴛɪᴍᴇ
-
-  ~ 1 ɪᴘ 25ᴋ (ɢᴀɴᴛɪ ɪᴘ ɢʀᴀᴛɪs 1x ᴀsᴀʟ ɪᴘ sᴜsᴘᴇɴᴅ/ʙᴀɴɴᴇᴅ)
-
-  ~ 2 ɪᴘ 45ᴋ (ɢᴀɴᴛɪ ɪᴘ ɢʀᴀᴛɪs 2x ᴀsᴀʟ ɪᴘ sᴜsᴘᴇɴᴅ/ʙᴀɴɴᴇᴅ)
-
-  ~ 4 ɪᴘ 60ᴋ (ɢᴀɴᴛɪ ɪᴘ ɢʀᴀᴛɪs 4x ᴀsᴀʟ ɪᴘ sᴜsᴘᴇɴᴅ/ʙᴀɴɴᴇᴅ)
-<h2 align="left">
-🚀 UNTUK BELI CHAT 
-https://t.me/CasperGaming 
-<h2><hr>
-
-
+</br>
+<p>🔥 𝐉𝐔𝐀𝐋 𝐀𝐔𝐓𝐎𝐒𝐂𝐑𝐈𝐏𝐓 𝐏𝐑𝐄𝐌𝐈𝐔𝐌</p>
+<p>𝐋𝐈𝐒𝐓 𝐅𝐈𝐓𝐔𝐑&nbsp;</p>
+<p>◇━━━━━━━━━━━━━━━━━━━━━</p>
+<p>- ᴀᴜᴛᴏ ʙᴀᴄᴋᴜᴘ ᴠɪᴀ ɴᴏᴛɪꜰ ᴛᴇʟᴇɢʀᴀᴍ ʙɪsᴀ ᴀᴛᴜʀ ᴡᴀᴋᴛᴜ ᴏᴛᴏᴍᴀᴛɪs ʙᴀᴄᴋᴜᴘ</p>
+<p>- ʀᴇsᴛᴏʀᴇ ʙᴀᴄᴋᴜᴘ sɪᴍᴘʟᴇ ᴛɪɴɢɢᴀʟ ᴍᴀsᴜᴋɪɴ ᴜʀʟ</p>
+<p>- ᴀᴜᴛᴏ ɴᴏᴛɪꜰ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜʟᴛɪ ʟᴏɢɪɴ ssʜ, xʀᴀʏ, ᴠ2ʀᴀʏ. ʙɪsᴀ sᴇᴛ ʟɪᴍɪᴛ ʟᴏᴄᴋ ᴀᴋᴜɴɴʏᴀ</p>
+<p>- ᴀᴜᴛᴏ ʟᴏᴄᴋ ᴀᴋᴜɴ sᴀᴀᴛ ᴍᴜʟᴛɪ ʟᴏɢɪɴ ssʜ, ᴠ2ʀᴀʏ ᴅᴀɴ xʀᴀʏ. ʙɪsᴀ ᴅɪʙᴜᴋᴀ ᴊᴜɢᴀ sᴀᴀᴛ ᴜsᴇʀ ᴜᴅᴀʜ ᴍɪɴᴛᴀ ᴍᴀᴀꜰ</p>
+<p>- ᴀᴜᴛᴏ ɴᴏᴛɪꜰ ᴛᴇʟᴇɢʀᴀᴍ sᴀᴀᴛ ʙᴜᴀᴛ ᴀᴋᴜɴ ssʜ, xʀᴀʏ, ᴠ2ʀᴀʏ ᴅɪ ᴠᴘs</p>
+<p>- ʙɪsᴀ ʀᴇsᴛᴏʀᴇ ᴀᴋᴜɴ xʀᴀʏ, ᴠ2ʀᴀʏ ʏᴀɴɢ ᴜᴅᴀʜ ᴇxᴘɪʀᴇᴅ, ᴋᴇʜᴀᴘᴜs. ᴊᴀᴅɪ ɢᴀ ᴘᴇʀʟᴜ ʟᴀɢɪ ʙᴜᴀᴛ ᴄᴏɴꜰɪɢ ʙᴀʀᴜ</p>
+<p>- sɪᴍᴘʟᴇ ᴄʀᴇᴀᴛᴇ ᴛʀɪᴀʟ ᴠɪᴀ ᴍᴇɴɪᴛ ᴊᴀᴅɪ ᴀᴍᴀɴ ᴜsᴇʀ ʏɢ ʟᴀɪɴ ɢᴀ ᴋᴇɢᴀɴɢɢᴜ&nbsp;</p>
+<p>- ʙɪsᴀ ᴄᴇᴋ ᴘᴇᴍᴀᴋᴀɪᴀɴ ᴛᴏᴛᴀʟ ʙᴀɴᴅᴡɪᴛʜ</p>
+<p>◇━━━━━━━━━━━━━━━━━━━━━</p>
+<p>𝐇𝐀𝐑𝐆𝐀</p>
+<p>~ 1ɪᴘ 1ʙᴜʟᴀɴ 1</p>
+<p>~ 2ɪᴘ 1ʙᴜʟᴀɴ 15</p>
+<p>~ 4ɪᴘ 1ʙᴜʟᴀɴ 20</p>
+<p><br></p>
+<p>~ 1ɪᴘ 1ᴛᴀʜᴜɴ 30ᴋ (ɢᴀɴᴛɪ ɪᴘ ɢʀᴀᴛɪs 1x</p>
+<p>~ 2ɪᴘ 1ᴛᴀʜᴜɴ 50ᴋ (ɢᴀɴᴛɪ ɪᴘ ɢʀᴀᴛɪs 2x</p>
+<p>◇━━━━━━━━━━━━━━━━━━━━━</p>
+<p>𝐓𝐑𝐈𝐀𝐋&nbsp;</p>
+<p>𝐎𝐑𝐃𝐄𝐑&nbsp;</p>
+<p>𝐏𝐌 𝐂𝐇𝐀𝐓</p>
+<p><br></p>
+<p>𝐓𝐄𝐋𝐄𝐆𝐑𝐀𝐌</p>
+<p>@CasperGaming</p>
+<p>𝐖𝐇𝐀𝐓𝐒𝐀𝐏</p>
+<p>08776120528</p>
+</br>
 <h2 align="center"> ♦️Supported Linux Distribution♦️</h2>
 
 </p> 

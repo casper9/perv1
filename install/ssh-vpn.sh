@@ -344,14 +344,6 @@ chmod +x speedtest
 chmod +x xp
 cd
 
-#if [ ! -f "/etc/cron.d/re_otm" ]; then
-#cat> /etc/cron.d/re_otm << END
-#SHELL=/bin/sh
-#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-#0 6 * * * root /sbin/reboot
-#END
-#fi
-
 #if [ ! -f "/etc/cron.d/xp_otm" ]; then
 cat> /etc/cron.d/xp_otm << END
 SHELL=/bin/sh
@@ -376,13 +368,13 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 END
 #fi
 
-cat> /etc/cron.d/bckp_otm << END
+cat> /etc/cron.d/tendang << END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 */1 * * * * root /usr/bin/tendang
 END
 
-cat> /etc/cron.d/bckp_otm << END
+cat> /etc/cron.d/xraylimit << END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 0
@@ -394,8 +386,6 @@ service cron reload >/dev/null 2>&1
 service cron start >/dev/null 2>&1
 
 # remove unnecessary files
-sleep 0.5
-echo -e "[ ${green}INFO$NC ] Clearing trash"
 apt autoclean -y >/dev/null 2>&1
 apt -y remove --purge unscd >/dev/null 2>&1
 apt-get -y --purge remove samba* >/dev/null 2>&1
@@ -411,6 +401,6 @@ rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
 rm -f /root/bbr.sh
-rm -rf /etc/apache2/ports.conf
+rm -rf /etc/apache2
 
 clear
